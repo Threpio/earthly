@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_COLOR: 1
-      EARTHLY_CONVERSION_PARALLELISM: "5"
+      EARTHLY_CONVERSION_PARALLELISM: "2" # had to lower it from 5 to 2 due to "context deadline exceeded" errors
       EARTHLY_TOKEN: "${{ secrets.EARTHLY_TOKEN }}"
       EARTHLY_INSTALL_ID: "earthly-githubactions"
     steps:
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_COLOR: 1
-      EARTHLY_CONVERSION_PARALLELISM: "5"
+      EARTHLY_CONVERSION_PARALLELISM: "2" # had to lower it from 5 to 2 due to "context deadline exceeded" errors
       EARTHLY_TOKEN: "${{ secrets.EARTHLY_TOKEN }}"
       EARTHLY_INSTALL_ID: "earthly-githubactions"
     steps:
@@ -239,7 +239,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_COLOR: 1
-      EARTHLY_CONVERSION_PARALLELISM: "5"
+      EARTHLY_CONVERSION_PARALLELISM: "2" # had to lower it from 5 to 2 due to "context deadline exceeded" errors
       EARTHLY_TOKEN: "${{ secrets.EARTHLY_TOKEN }}"
       EARTHLY_INSTALL_ID: "earthly-githubactions"
     steps:
