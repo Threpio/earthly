@@ -6,12 +6,12 @@ buildkitd:
     IF [ "$BUILDKIT_PROJECT" != "" ]
         IF case "$BUILDKIT_PROJECT" in "../*") true;; "*") false;; esac
             # Assuming this is coming from the main Earthly Earthfile.
-            ARG BUILDKIT_BASE_IMAGE=../$BUILDKIT_PROJECT+build
+            ARG BUILDKIT_BASE_IMAGE=github.com/alexcb/buildkit:7ae108d84c84d78595be81e8d18d1869bfbdfe1f+build
         ELSE
-            ARG BUILDKIT_BASE_IMAGE=$BUILDKIT_PROJECT+build
+            ARG BUILDKIT_BASE_IMAGE=github.com/alexcb/buildkit:7ae108d84c84d78595be81e8d18d1869bfbdfe1f+build
         END
     ELSE
-        ARG BUILDKIT_BASE_IMAGE=github.com/earthly/buildkit:199ad6a5c213d2a6937ced9e2b52b5b57e0a3a37+build
+        ARG BUILDKIT_BASE_IMAGE=github.com/alexcb/buildkit:7ae108d84c84d78595be81e8d18d1869bfbdfe1f+build
     END
     FROM $BUILDKIT_BASE_IMAGE
     RUN echo "@edge-community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
